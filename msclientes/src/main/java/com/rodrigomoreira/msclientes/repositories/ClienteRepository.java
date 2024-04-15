@@ -8,6 +8,6 @@ import com.rodrigomoreira.msclientes.domain.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long>{
 
-    Optional<Cliente> findById(String cpf);
+    Optional<Cliente> findByCpf(String cpf);
     
 }
