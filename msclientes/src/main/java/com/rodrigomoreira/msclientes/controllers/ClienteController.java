@@ -14,8 +14,11 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.rodrigomoreira.msclientes.domain.ClienteDTO;
 import com.rodrigomoreira.msclientes.services.ClienteService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping("clientes")
+@Slf4j
 public class ClienteController {
 
     private ClienteService service;
@@ -26,6 +29,7 @@ public class ClienteController {
 
     @GetMapping
     public String status(){
+        log.info("Obtendo o status do microservice de clientes");
         return "ok";
     }
 
