@@ -41,6 +41,7 @@ public class ClienteController {
         return ResponseEntity.created(headerLocation).build();
     }
 
+    @SuppressWarnings("rawtypes")
     @GetMapping(params = "cpf")
     public ResponseEntity dadosCliente(@RequestParam("cpf") String cpf){
         var cliente = service.getByCPF(cpf);
