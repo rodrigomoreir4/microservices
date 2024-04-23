@@ -2,10 +2,14 @@ package com.rodrigomoreira.msavaliadorcredito.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rodrigomoreira.msavaliadorcredito.domain.DadosAvaliacao;
+import com.rodrigomoreira.msavaliadorcredito.domain.RetornoAvaliacaoCliente;
 import com.rodrigomoreira.msavaliadorcredito.domain.SituacaoCliente;
 import com.rodrigomoreira.msavaliadorcredito.exceptions.DadosClienteNotFoundException;
 import com.rodrigomoreira.msavaliadorcredito.exceptions.ErroComunicacaoMicroserviceException;
@@ -26,6 +30,8 @@ public class AvaliadorCreditoController {
         return "ok";
     }
 
+    
+    @SuppressWarnings("rawtypes")
     @GetMapping(value = "situacao-cliente", params = "cpf")
     public ResponseEntity consultaSituacaoCliente(@RequestParam("cpf") String cpf){        
         try {
@@ -36,6 +42,20 @@ public class AvaliadorCreditoController {
         } catch (ErroComunicacaoMicroserviceException e){
             return ResponseEntity.status(e.getStatus()).body(e.getMessage());
         }
+    }
+
+    @SuppressWarnings("rawtypes")
+    @PostMapping
+    public ResponseEntity realizarAvaliacao(@RequestBody DadosAvaliacao dados){
+        try {
+            RetornoAvaliacaoCliente retornoAvaliacaoCliente = avaliadorCreditoService.realizarAvaliacao(dados.getCpf(), dados.getRenda());
+            return ResponseEntity.ok(retornoAvaliacaoCliente);
+        } catch (DadosClienteNotFoundException e ){
+            return ResponseEntity.notFound().build();
+        } catch (ErroComunicacaoMicroserviceException e){
+            return ResponseEntity.status(e.getStatus()).body(e.getMessage());
+        }
+        
     }
 
 }
