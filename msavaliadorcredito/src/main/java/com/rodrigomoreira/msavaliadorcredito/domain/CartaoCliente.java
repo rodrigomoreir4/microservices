@@ -9,6 +9,6 @@ public class CartaoCliente {
     
     private String nome;
     private String bandeira;
-    private BigDecimal limiteliberado;
+    private BigDecimal limiteLiberado;
     
 }
