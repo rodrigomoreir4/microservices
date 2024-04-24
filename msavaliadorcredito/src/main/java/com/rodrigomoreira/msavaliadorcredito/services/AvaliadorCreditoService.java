@@ -2,6 +2,7 @@ package com.rodrigomoreira.msavaliadorcredito.services;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.apache.hc.core5.http.HttpStatus;
@@ -14,10 +15,14 @@ import com.rodrigomoreira.msavaliadorcredito.domain.Cartao;
 import com.rodrigomoreira.msavaliadorcredito.domain.CartaoAprovado;
 import com.rodrigomoreira.msavaliadorcredito.domain.CartaoCliente;
 import com.rodrigomoreira.msavaliadorcredito.domain.DadosCliente;
+import com.rodrigomoreira.msavaliadorcredito.domain.DadosSolicitacaoEmissaoCartao;
+import com.rodrigomoreira.msavaliadorcredito.domain.ProtocoloSolicitacaoCartao;
 import com.rodrigomoreira.msavaliadorcredito.domain.RetornoAvaliacaoCliente;
 import com.rodrigomoreira.msavaliadorcredito.domain.SituacaoCliente;
 import com.rodrigomoreira.msavaliadorcredito.exceptions.DadosClienteNotFoundException;
 import com.rodrigomoreira.msavaliadorcredito.exceptions.ErroComunicacaoMicroserviceException;
+import com.rodrigomoreira.msavaliadorcredito.exceptions.ErroSolicitacaoCartaoException;
+import com.rodrigomoreira.msavaliadorcredito.mqueue.SolicitacaoEmissaoCartaoPublisher;
 
 import feign.FeignException;
 
@@ -26,10 +31,13 @@ public class AvaliadorCreditoService {
     
     private ClienteResourceClient clientesClient;
     private CartoesResourceClient cartoesClient;
+    private SolicitacaoEmissaoCartaoPublisher emissaoCartaoPublisher;
 
-    public AvaliadorCreditoService(ClienteResourceClient clientesClient, CartoesResourceClient cartoesClient) {
+    public AvaliadorCreditoService(ClienteResourceClient clientesClient, CartoesResourceClient cartoesClient,
+            SolicitacaoEmissaoCartaoPublisher emissaoCartaoPublisher) {
         this.clientesClient = clientesClient;
         this.cartoesClient = cartoesClient;
+        this.emissaoCartaoPublisher = emissaoCartaoPublisher;
     }
 
     public SituacaoCliente obterSituacaoCliente(String cpf) 
@@ -83,6 +91,16 @@ public class AvaliadorCreditoService {
                 throw new DadosClienteNotFoundException();
             }
             throw new ErroComunicacaoMicroserviceException(e.getMessage(), status);
+        }
+    }
+
+    public ProtocoloSolicitacaoCartao solicitarEmissaoCartao(DadosSolicitacaoEmissaoCartao dados){
+        try {
+            emissaoCartaoPublisher.solicitarCartao(dados);
+            var protocolo = UUID.randomUUID().toString();
+            return new ProtocoloSolicitacaoCartao(protocolo);
+        } catch (Exception e) {
+            throw new ErroSolicitacaoCartaoException(e.getMessage());
         }
     }
 }
