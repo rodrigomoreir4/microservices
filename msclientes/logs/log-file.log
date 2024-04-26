@@ -1,0 +1,61 @@
+2024-04-26T11:06:51.450-03:00  INFO 13892 --- [msclientes] [restartedMain] c.r.msclientes.MsclientesApplication     : Starting MsclientesApplication using Java 17.0.8 with PID 13892 (C:\Users\Rodrigo Moreira\Downloads\microservices_springCloud\msclientes\target\classes started by Rodrigo Moreira in C:\Users\Rodrigo Moreira\Downloads\microservices_springCloud\msclientes)
+2024-04-26T11:06:51.584-03:00  INFO 13892 --- [msclientes] [restartedMain] c.r.msclientes.MsclientesApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-04-26T11:06:52.301-03:00  INFO 13892 --- [msclientes] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-26T11:06:52.303-03:00  INFO 13892 --- [msclientes] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-26T11:07:00.116-03:00  INFO 13892 --- [msclientes] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-26T11:07:01.159-03:00  INFO 13892 --- [msclientes] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 956 ms. Found 1 JPA repository interface.
+2024-04-26T11:07:03.418-03:00  INFO 13892 --- [msclientes] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e31f4599-3f30-3183-a8a3-9e57be73d088
+2024-04-26T11:07:07.353-03:00  WARN 13892 --- [msclientes] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-04-26T11:07:07.583-03:00  WARN 13892 --- [msclientes] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-04-26T11:07:12.096-03:00  INFO 13892 --- [msclientes] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-04-26T11:07:12.265-03:00  INFO 13892 --- [msclientes] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-26T11:07:12.371-03:00  INFO 13892 --- [msclientes] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-26T11:07:13.163-03:00  INFO 13892 --- [msclientes] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-26T11:07:13.165-03:00  INFO 13892 --- [msclientes] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 20859 ms
+2024-04-26T11:07:15.394-03:00  INFO 13892 --- [msclientes] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-26T11:07:17.235-03:00  INFO 13892 --- [msclientes] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:28d01e97-9c96-4522-9bb7-e22ae8609c3a user=SA
+2024-04-26T11:07:17.416-03:00  INFO 13892 --- [msclientes] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-26T11:07:17.564-03:00  INFO 13892 --- [msclientes] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:28d01e97-9c96-4522-9bb7-e22ae8609c3a'
+2024-04-26T11:07:29.452-03:00  INFO 13892 --- [msclientes] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-26T11:07:29.851-03:00  INFO 13892 --- [msclientes] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-26T11:07:30.151-03:00  INFO 13892 --- [msclientes] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-26T11:07:31.936-03:00  INFO 13892 --- [msclientes] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-26T11:07:40.356-03:00  INFO 13892 --- [msclientes] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-26T11:07:40.625-03:00  INFO 13892 --- [msclientes] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26T11:07:45.440-03:00  WARN 13892 --- [msclientes] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-26T11:07:54.680-03:00  INFO 13892 --- [msclientes] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-26T11:07:55.745-03:00  INFO 13892 --- [msclientes] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2024-04-26T11:07:56.146-03:00  WARN 13892 --- [msclientes] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-04-26T11:07:56.228-03:00  INFO 13892 --- [msclientes] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2024-04-26T11:07:56.605-03:00  INFO 13892 --- [msclientes] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 64361 (http) with context path ''
+2024-04-26T11:07:56.640-03:00  INFO 13892 --- [msclientes] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 64361
+2024-04-26T11:07:56.708-03:00  INFO 13892 --- [msclientes] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2024-04-26T11:07:56.926-03:00  INFO 13892 --- [msclientes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2024-04-26T11:07:56.968-03:00  INFO 13892 --- [msclientes] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-04-26T11:07:57.097-03:00  INFO 13892 --- [msclientes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-04-26T11:07:57.118-03:00  INFO 13892 --- [msclientes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-04-26T11:07:57.119-03:00  INFO 13892 --- [msclientes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-04-26T11:07:57.121-03:00  INFO 13892 --- [msclientes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-04-26T11:07:57.127-03:00  INFO 13892 --- [msclientes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-04-26T11:07:57.163-03:00  INFO 13892 --- [msclientes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2024-04-26T11:07:57.222-03:00  INFO 13892 --- [msclientes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-04-26T11:07:58.724-03:00  INFO 13892 --- [msclientes] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2024-04-26T11:07:58.733-03:00  INFO 13892 --- [msclientes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2024-04-26T11:07:58.791-03:00  INFO 13892 --- [msclientes] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-04-26T11:07:58.808-03:00  INFO 13892 --- [msclientes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1714140478807 with initial instances count: 0
+2024-04-26T11:07:58.857-03:00  INFO 13892 --- [msclientes] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MSCLIENTES with eureka with status UP
+2024-04-26T11:07:58.873-03:00  INFO 13892 --- [msclientes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1714140478873, current=UP, previous=STARTING]
+2024-04-26T11:07:58.881-03:00  INFO 13892 --- [msclientes] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSCLIENTES/msclientes:08a81753357e618fa87e1a7f613962b3: registering service...
+2024-04-26T11:07:59.358-03:00  INFO 13892 --- [msclientes] [restartedMain] c.r.msclientes.MsclientesApplication     : Started MsclientesApplication in 72.357 seconds (process running for 75.405)
+2024-04-26T11:07:59.446-03:00  INFO 13892 --- [msclientes] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSCLIENTES/msclientes:08a81753357e618fa87e1a7f613962b3 - registration status: 204
+2024-04-26T11:08:11.003-03:00  INFO 13892 --- [msclientes] [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-26T11:08:11.004-03:00  INFO 13892 --- [msclientes] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-26T11:08:11.016-03:00  INFO 13892 --- [msclientes] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2024-04-26T11:08:28.738-03:00  INFO 13892 --- [msclientes] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-04-26T11:08:28.739-03:00  INFO 13892 --- [msclientes] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-04-26T11:08:28.739-03:00  INFO 13892 --- [msclientes] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-04-26T11:08:28.741-03:00  INFO 13892 --- [msclientes] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-04-26T11:08:28.741-03:00  INFO 13892 --- [msclientes] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-04-26T11:08:28.742-03:00  INFO 13892 --- [msclientes] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2024-04-26T11:08:28.743-03:00  INFO 13892 --- [msclientes] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-04-26T11:08:29.128-03:00  INFO 13892 --- [msclientes] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
