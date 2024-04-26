@@ -11,7 +11,10 @@ import com.rodrigomoreira.mscartoes.domain.DadosSolicitacaoEmissaoCartao;
 import com.rodrigomoreira.mscartoes.repositories.CartaoRepository;
 import com.rodrigomoreira.mscartoes.repositories.ClienteCartaoRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Component
+@Slf4j
 public class EmissaoCartaoSubscriber {
 
     private CartaoRepository cartaoRepository;
@@ -37,7 +40,7 @@ public class EmissaoCartaoSubscriber {
             clienteCartaoRepository.save(clienteCartao);
         
         } catch (Exception e){
-            e.printStackTrace();
+            log.error("Erro ao receber solicitacao de emissao de cartao: {}", e.getMessage());
         }
     }
 }
